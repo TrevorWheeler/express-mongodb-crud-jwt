@@ -1,14 +1,12 @@
-const mongoose = require("mongoose");
-mongoose.set("debug", true);
+require('dotenv').load();
+const mongoose = require('mongoose');
+mongoose.set('debug', true);
 mongoose.Promise = Promise;
-mongoose.connect(
-  // "mongodb://localhost/the-caf",
-  "mongodb://thecaf:114simpsons@ds143932.mlab.com:43932/thecaf",
-  {
-    keepAlive: true
-    // useNewUrlParser: true
-  }
-);
+mongoose.connect('mongodb://localhost/api', {
+	keepAlive: true,
+	useNewUrlParser: true,
+	useCreateIndex: true
+});
 
-module.exports.User = require("./user");
-module.exports.Menu = require("./menu");
+module.exports.User = require('./user');
+module.exports.Projects = require('./projects');

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -11,10 +11,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  menuItems: [
+  projects: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Menu"
+      ref: "Projects"
     }
   ]
 });
